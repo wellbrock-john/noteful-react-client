@@ -21,7 +21,7 @@ export default class AddNote extends Component {
 			modified: new Date().toISOString(),
 		};
 		console.log(newNote);
-		fetch(`${config.API_ENDPOINT}/api/notes`, {
+		fetch(`${config.API_ENDPOINT}api/notes`, {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -34,7 +34,7 @@ export default class AddNote extends Component {
 			})
 			.then((note) => {
 				this.context.addNote(note);
-				this.props.history.push(`/api/folder/${note.folder_id}`);
+				this.props.history.push(`api/folder/${note.folder_id}`);
 			})
 			.catch((error) => {
 				console.error({ error });
